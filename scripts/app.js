@@ -3,16 +3,15 @@ const card = document.querySelector('.card');
 const details = document.querySelector('.details');
 
 const updateUI = (data) => {
-
-    const cityDets = data.cityDets;
-    const weather = data.weather;
+    //destructure properties
+    const { cityDets, weather } = data;
 
     // update details template
     details.innerHTML = `
     <h5 class="my3">${cityDets.EnglishName}</h5>
     <div class="my-3">${weather.WeatherText}</div>
     <div class="display-4 my-4">
-        <span>${weather.Temperatur.Metric.Value}</span>
+        <span>${weather.Temperature.Metric.Value}</span>
         <span>&deg;C</span>
     </div>
     `;
